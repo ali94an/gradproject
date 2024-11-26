@@ -1,0 +1,11 @@
+{% extends "base.html" %} {% block content %}
+<div class="form-container">
+    <h2>Analyze Amazon Product Reviews</h2>
+    <p>Paste an Amazon product URL below to scrape reviews and analyze their sentiments.</p>
+    <form method="POST" action="/scrape">
+        <label for="product_url">Product Review URL:</label>
+        <input type="url" id="product_url" name="product_url" placeholder="Paste your Amazon product URL here" required>
+        <button type="submit">Analyze Reviews</button>
+    </form>
+</div>
+{% endblock %}

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sentiment Analysis Results</title>
+</head>
+<body>
+    <h1>Sentiment Analysis Results</h1>
+
+    <!-- Display Sentiment Counts -->
+    <h2>Sentiment Counts</h2>
+    <ul>
+        <li>Positive: {{ sentiment_counts.get('Positive', 0) }}</li>
+        <li>Neutral: {{ sentiment_counts.get('Neutral', 0) }}</li>
+        <li>Negative: {{ sentiment_counts.get('Negative', 0) }}</li>
+    </ul>
+
+    <!-- Display Reviews with Sentiment -->
+    <h2>Reviews with Sentiment</h2>
+    <table border="1">
+        <thead>
+            <tr>
+                <th>Review</th>
+                <th>Sentiment</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% if reviews %}
+                {% for review in reviews %}
+                    <tr>
+                        <td>{{ review.get('Review', 'N/A') }}</td>
+                        <td>{{ review.get('Sentiment Label', 'Unknown') }}</td>
+                    </tr>
+                {% endfor %}
+            {% else %}
+                <tr>
+                    <td colspan="2">No reviews to display.</td>
+                </tr>
+            {% endif %}
+        </tbody>
+    </table>
+
+    <!-- Provide Download Link for Output File -->
+    <h2>Download Results</h2>
+    <p>
+        <a href="{{ output_file }}">Download Excel File</a>
+    </p>
+</body>
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sentilytics</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+
+<body>
+    <header>
+        <div class="navbar">
+            <h1>Sentilytics</h1>
+            <p class="slogan">Turning Reviews into Insights, One Sentiment at a Time</p>
+        </div>
+    </header>
+    <main class="content">
+        {% block content %} {% endblock %}
+    </main>
+    <footer>
+        <p>© 2024 Sentilytics | Empowering Your Decisions</p>
+    </footer>
+</body>
+
+</html>
